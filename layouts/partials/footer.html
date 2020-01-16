@@ -1,0 +1,61 @@
+<footer class="site-footer">
+    <section class="copyright">&copy; {{ now.Format "2006" }} {{ .Site.Title }}</section>
+    <section class="poweredby"> هذا الموقع مُبنى بـ<a href="https://gohugo.io">Hugo</a>.</section>
+    <div class="bottom-panel " id="bottom-panel">
+        <div class="popup-wrapper hide" id="popup-wrapper">
+            <div id="popup-content"></div>
+            <div id="popup-close">&times;</div>
+        </div>
+    </div>
+    <script>
+        function getFootnoteContent(index) {
+                const id = "fn:" + (index + 1);
+                const fn = document.getElementById(id);
+                return fn.innerHTML.trim();
+            };
+
+            function footnotePopup() {
+                const popupWrapper = document.querySelector("#popup-wrapper");
+
+                // Create main container that will hold footnote content
+                const popupContent = popupWrapper.appendChild(document.createElement("div"));
+                popupContent.id = "popup-content";
+
+                let popupIndex = 0;
+                popupIndex = popupWrapper.insertBefore(document.createElement("div"), popupContent);
+                popupIndex.id = "popup-index";
+
+                let popupCloseButton = document.querySelector('#popup-close');
+
+                // Remove redundant [return] links from footnote list (optional)
+
+                const fnRefs = document.querySelectorAll("a.footnote-ref");
+                fnRefs.forEach(function (fnRef, index) {
+                    fnRef.addEventListener("click", handler("refs", fnRef.hash, index));
+                });
+
+                window.addEventListener("scroll", handler("close"));
+                popupCloseButton.addEventListener("click", handler("close"));
+
+                function handler(type, target, index) {
+                    return function (event) {
+                        if (type === "close") {
+                            popupWrapper.classList.remove("show-popup"); popupWrapper.classList.add("hide");
+                            popupContent.innerHTML = ''
+                        }
+
+                        if (type === "refs") {
+                            event.preventDefault();
+                            // get the HTML to display in the footnote
+                            // popupIndex.innerHTML = document.querySelector(target);
+                            popupIndex.innerHTML = index + 1;
+                            popupContent.innerHTML = getFootnoteContent(index);
+                            popupWrapper.classList.remove('hide'); popupWrapper.classList.add('show-popup');
+                        }
+                    };
+                };
+            };
+
+            footnotePopup();
+    </script>
+  </footer>

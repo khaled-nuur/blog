@@ -1,0 +1,14 @@
+{{ $pag := $.Paginator }}
+
+<nav role="navigation">
+    {{ if $pag.HasPrev }}
+
+
+    <a href="{{ $pag.Prev.URL }}"><button>&rarr; تدوينات أحدث</button></a>
+    {{ end }}
+    <span class="page-number">الصفحة {{ $pag.PageNumber }} من {{ $pag.TotalPages }}</span>
+    {{ if $pag.HasNext }}
+    <a href="{{ $pag.Next.URL }}"><button>تدوينات أقدم &larr;</button></a>
+
+    {{ end }}
+</nav>
