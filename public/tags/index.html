@@ -1,5 +1,40 @@
-<footer class="site-footer">
-    <section class="copyright">&copy;  {{ .Site.Title }} {{ now.Format "2006" }}</section>
+<!DOCTYPE html>
+<html lang="ar"><head>
+    <title>
+        
+        Tags - مدونة خالد نور
+        
+    </title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    
+    <meta name="description" content="مدونة شخصية">
+    <meta name="author" content="">
+    <link rel="stylesheet" href="/css/style.css">
+</head><body><header class="header">
+    <h1><a href="/">مدونة خالد نور</a></h1>
+</header><div id="content">
+
+<main class="content" role="main">
+    
+    
+    <h2 class="tag-title"> عرض المواضيع الموسومة بـ : Tags</h2>
+    
+    
+
+    
+    
+
+<nav role="navigation">
+    
+    <span class="page-number">الصفحة 1 من 0</span>
+    
+</nav>
+</main>
+
+        </div><footer class="site-footer">
+    <section class="copyright">&copy;  مدونة خالد نور 2020</section>
     <section class="poweredby"> هذا الموقع مُبنى بـ<a href="https://gohugo.io">Hugo</a>.</section>
     <div class="bottom-panel " id="bottom-panel">
         <div class="popup-wrapper hide" id="popup-wrapper">
@@ -8,9 +43,8 @@
         </div>
     </div>
     <script>
-        /*         this is based on original work by:
-                Hugo Footnotes Popup | https://github.com/vaetas/hugo-footnotes-popup/ | MIT License 
-                */
+        
+
         function getFootnoteContent(index) {
             const id = "fn:" + (index + 1);
             const fn = document.getElementById(id);
@@ -20,7 +54,7 @@
         function footnotePopup() {
             const popupWrapper = document.querySelector("#popup-wrapper");
 
-            // Create main container that will hold footnote content
+            
             const popupContent = popupWrapper.appendChild(document.createElement("div"));
             popupContent.id = "popup-content";
 
@@ -30,7 +64,7 @@
 
             let popupCloseButton = document.querySelector('#popup-close');
 
-            // Remove redundant [return] links from footnote list (optional)
+            
 
             const fnRefs = document.querySelectorAll("a.footnote-ref");
             fnRefs.forEach(function (fnRef, index) {
@@ -49,8 +83,8 @@
 
                     if (type === "refs") {
                         event.preventDefault();
-                        // get the HTML to display in the footnote
-                        // popupIndex.innerHTML = document.querySelector(target);
+                        
+                        
                         popupIndex.innerHTML = index + 1;
                         popupContent.innerHTML = getFootnoteContent(index);
                         popupWrapper.classList.remove('hide'); popupWrapper.classList.add('show-popup');
@@ -61,4 +95,5 @@
 
         footnotePopup();
     </script>
-</footer>
+</footer></body>
+</html>

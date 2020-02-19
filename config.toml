@@ -1,3 +1,17 @@
-baseURL = "http://example.org/"
-languageCode = "en-us"
-title = "My New Hugo Site"
+baseurl = "https://localhost:1313/"
+title = "مدونة خالد نور"
+author = "Khaled Nuur"
+enableEmoji = true
+LanguageCode = "ar"
+summaryLength = 40
+[taxonomies]
+   tag = "tags"
+[params]
+    description = "مدونة شخصية"
+    heading = "مدونة خالد نور"
+    dateFormatToUse = "2006-01-02"
+    twitter = "khaled_nuur"
+    archive-paginate = 3
+[Language]
+    Lang = "ar"
+    languageName = "Arabic"

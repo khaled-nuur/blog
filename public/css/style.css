@@ -1,4 +1,7 @@
-/*! sanitize.css v7.0.3 | CC0 License | github.com/csstools/sanitize.css */
+/* 
+this is based on original work by:-
+    - Marx v3.0.6 | MIT License | https://github.com/mblode/marx 
+  */
 *,:after,:before {
     background-repeat: no-repeat;
     -webkit-box-sizing: border-box;
@@ -243,7 +246,7 @@ template {
     position: absolute
 }
 
-/*! Marx v3.0.6 - The classless CSS reset (perfect for Communists) | MIT License | https://github.com/mblode/marx */
+
 article,aside,details,footer,header,main,section,summary {
     margin: 0 auto 16px;
     width: 100%

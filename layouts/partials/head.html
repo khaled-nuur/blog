@@ -9,11 +9,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <!-- Meta -->
     {{- if eq .Kind "page" }}
-    <meta name="description" content="{{ .Summary }}">
-    <meta name="author" content="{{ default .Site.Params.author }}">
+        {{- if .Params.description}}
+        <meta name="description" content="{{.Params.description}}">
+        {{else}}
+        <meta name="description" content="{{ .Summary }}">
+        {{end}}
     {{ else }}
     <meta name="description" content="{{ .Site.Params.description }}">
     <meta name="author" content="{{ .Site.Params.author }}">
     {{ end -}}
-    <link rel="stylesheet" href="/css/marx-rtl-min.css">
+    <link rel="stylesheet" href="/css/style.css">
 </head>
